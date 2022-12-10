@@ -3,6 +3,14 @@
     "license": "MIT",
     "description": "API Toolkit is a PHP library for working with REST APIs.",
     "homepage": "https://github.com/nsrosenqvist/php-api-toolkit",
+    "authors": [
+        {
+            "name": "Niklas Rosenqvist",
+            "email": "niklas.s.rosenqvist@gmail.com",
+            "homepage": "https://www.nsrosenqvist.com/",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "NSRosenqvist\\ApiToolkit\\": "src/"
