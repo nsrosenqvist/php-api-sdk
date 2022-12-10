@@ -1,0 +1,9 @@
+# Unordered routes
+route/{detail}:
+route/specificity:
+route/*:
+route/specificity/{id}:
+route/specificity/200:
+route/specificity/*:
+route/{detail}/*:
+route/{detail}/100:

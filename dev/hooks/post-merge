@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Set root as working directory
+SCRIPT=$(readlink -f "$0")
+DIR=$(dirname "$SCRIPT")
+cd "$DIR/../../"
+
+composer setup

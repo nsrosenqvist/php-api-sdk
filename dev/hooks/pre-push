@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Set root as working directory
+SCRIPT=$(readlink -f "$0")
+DIR=$(dirname "$SCRIPT")
+cd "$DIR/../../"
+
+# Stash working directory
+git stash -q --keep-index
+
+# Test + lint
+composer test
+test_result=$?
+
+composer lint
+lint_result=$?
+
+# Apply stash
+git stash pop -q
+
+# Exit with test result
+exit $(($test_result + $lint_result))

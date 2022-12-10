@@ -1,0 +1,8 @@
+# Alternative definition syntaxes
+alternative/syntax/short-code: 100
+alternative/syntax/short-content: body
+alternative/syntax/short-stub: simple.txt
+alternative/syntax/rest:
+    GET: body
+    POST: 204
+    "*": 404

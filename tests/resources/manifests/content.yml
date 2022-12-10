@@ -1,0 +1,10 @@
+# Different ways of defining response content
+content/types/object:
+  content:
+      foo: bar
+      lorem: ipsum
+content/types/file:
+  content: single.json
+content/types/string:
+  code: 404
+  content: Foobar

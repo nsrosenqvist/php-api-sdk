@@ -1,0 +1,95 @@
+# Query comparison operators
+query/comparisons/missing:
+    - id: isset
+      match:
+        query:
+            missing: __isset__
+    - id: missing
+      match:
+        query:
+            missing: __missing__
+query/comparisons/special:
+    - id: isset
+      match:
+        query:
+            isset: __isset__
+    - id: booly-true
+      match:
+        query:
+            "true": __true__
+    - id: booly-false
+      match:
+        query:
+            "false": __false__
+    - id: booly
+      match:
+        query:
+            bool: __bool__
+    - id: string
+      match:
+        query:
+            string: __string__
+    - id: numeric
+      match:
+        query:
+            numeric: __numeric__
+    - id: int
+      match:
+        query:
+            int: __int__
+    - id: float
+      match:
+        query:
+            float: __float__
+    - id: array
+      match:
+        query:
+            array: __array__
+
+# Route matching options
+route/matching/static:
+    id: static
+route/matching/method:
+    - id: method-get
+      match:
+        method: GET
+    - id: method-put
+      match:
+        method: PUT
+route/matching/query:
+    - id: query-foo
+      match:
+        query:
+          id: foo
+    - id: query-bar
+      match:
+        query:
+          id: bar
+    - id: query-in
+      match:
+        query:
+          id:
+            - 1
+            - 2
+            - 3
+route/matching/{type}/200:
+    id: var
+    match:
+      type: static
+route/matching/{type}/{id}:
+    - id: var-var-1
+      match:
+        type: variable
+        id: 1
+    - id: var-var-2
+      match:
+        type: variable
+        id: 2
+route/matching/*:
+    id: glob
+
+# Request validation (uses same matching engine as query comparisons)
+request/validation:
+    validate:
+        foo: bar
+        lorem: __true__

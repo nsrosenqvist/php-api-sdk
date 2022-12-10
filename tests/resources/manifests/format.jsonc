@@ -1,0 +1,10 @@
+/**
+ * Multi-line comment
+ */
+{
+  // Single-line comment
+  "format/jsonc": {
+    "code": 201, // Mixed line content comment
+    "content": /* Inline comment */ "body"
+  }
+}

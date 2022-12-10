@@ -1,0 +1,17 @@
+# Should be ordered in descending order of specificity.
+definitions/specificity:
+  - id: query-less
+    match:
+      query:
+        foo: bar
+  - id: query-more
+    match:
+      query:
+        foo: bar
+        lorem: ipsum
+  - id: method
+    match:
+      method: PUT
+      query:
+        foo: bar
+  - id: empty

@@ -1,11 +1,17 @@
 {
-    "name": "nsrosenqvist/apicly",
+    "name": "nsrosenqvist/php-api-toolkit",
     "license": "MIT",
-    "description": "APIcly is a PHP library for working with RESTful APIs.",
-    "homepage": "https://github.com/nsrosenqvist/php-apicly",
+    "description": "API Toolkit is a PHP library for working with REST APIs.",
+    "homepage": "https://github.com/nsrosenqvist/php-api-toolkit",
     "autoload": {
         "psr-4": {
-            "NSRosenqvist\\APIcly\\": "src/"
+            "NSRosenqvist\\ApiToolkit\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NSRosenqvist\\ApiToolkit\\Tests\\": "tests/resources/src/"
         }
     },
     "require": {
@@ -13,8 +19,46 @@
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
         "guzzlehttp/guzzle": "^7.5",
-        "spatie/guzzle-rate-limiter-middleware": "^2.0",
-        "caseyamcl/guzzle_retry_middleware": "^2.7",
-        "psr/simple-cache": "^1.0"
+        "jrfnl/php-cast-to-type": "^2.1",
+        "illuminate/support": ">=5.5"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.22",
+        "ramsey/composer-repl": "^1.4",
+        "minicli/minicli": "^3.2",
+        "symfony/yaml": "^6.2",
+        "adhocore/json-comment": "^1.2",
+        "squizlabs/php_codesniffer": "^3.7",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "suggest": {
+        "symfony/yaml": "Allows parsing Yaml mock manifests",
+        "adhocore/json-comment": "Allows parsing JsonC mock manifests"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "ramsey/composer-repl": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "test": "@test:local",
+        "test:local": "./vendor/bin/pest",
+        "test:remote": "TEST_REMOTE=true ./vendor/bin/pest",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/pest --coverage",
+        "release": "@php ./dev/release.php",
+        "setup": "@php ./dev/setup.php",
+        "lint": "./vendor/bin/phpcs -p . --standard=phpcs.xml",
+        "post-install-cmd": "@setup"
+    },
+    "extra": {
+        "title": "PHP API Toolkit",
+        "ramsey/composer-repl": {
+            "includes": [
+                "vendor/autoload.php"
+            ]
+        }
     }
 }

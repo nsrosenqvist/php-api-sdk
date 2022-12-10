@@ -1,0 +1,20 @@
+<ruleset name="PHP_CodeSniffer">
+   <description>Code standard</description>
+
+   <file>src</file>
+   <file>tests</file>
+
+   <arg value="np"/>
+
+   <!-- General rule set -->
+   <rule ref="PSR12"/>
+
+   <!-- Target PHP Version -->
+   <rule ref="PHPCompatibility">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+   </rule>
+   <config name="testVersion" value="7.4-"/>
+
+   <!-- Exclude the Composer Vendor directory. -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>

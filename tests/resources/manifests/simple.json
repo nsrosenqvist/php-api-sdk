@@ -1,0 +1,8 @@
+{
+  "top/{middle}/low": {
+    "match": {
+      "middle": "medium"
+    },
+    "code": 201
+  }
+}
