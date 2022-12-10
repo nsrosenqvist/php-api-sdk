@@ -1,7 +1,7 @@
 {
     "name": "nsrosenqvist/php-api-toolkit",
     "license": "MIT",
-    "description": "API Toolkit is a PHP library for working with REST APIs.",
+    "description": "A versatile toolkit for easily integrating with remote APIs",
     "homepage": "https://github.com/nsrosenqvist/php-api-toolkit",
     "authors": [
         {
